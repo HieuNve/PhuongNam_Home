@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 import com.example.phuongnam_home.Model.TaiKhoan;
 import com.example.phuongnam_home.Model.TheLoai;
@@ -31,8 +32,10 @@ public class TheLoai_DAO {
         long kq = db.insert("table_the_loai", null, contentValues);
 
         if (kq > 0) {
+            Toast.makeText(context, "Thêm Thành Công", Toast.LENGTH_SHORT).show();
             return true;
         } else {
+            Toast.makeText(context, "Thêm Không Thành Công", Toast.LENGTH_SHORT).show();
             return false;
         }
 

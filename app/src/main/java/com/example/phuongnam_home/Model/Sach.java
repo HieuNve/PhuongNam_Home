@@ -9,6 +9,7 @@ public class Sach {
     private double Gia;
     private  String NhaXuatBan;
     private String TheLoai;
+    private String TacGia;
 
 
     public Sach() {
@@ -22,6 +23,15 @@ public class Sach {
         Gia = gia;
         NhaXuatBan = nhaXuatBan;
         TheLoai = theLoai;
+    }
+
+
+    public String getTacGia() {
+        return TacGia;
+    }
+
+    public void setTacGia(String tacGia) {
+        TacGia = tacGia;
     }
 
     public String getMaSach() {
