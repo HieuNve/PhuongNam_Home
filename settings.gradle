@@ -1,0 +1,2 @@
+rootProject.name='PhuongNam_Home'
+include ':app'
