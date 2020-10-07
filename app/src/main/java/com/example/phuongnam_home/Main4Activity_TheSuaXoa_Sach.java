@@ -96,20 +96,23 @@ public class Main4Activity_TheSuaXoa_Sach extends AppCompatActivity {
 
                         if (maS.equals("") || TenS.equals("") || DonGia.equals("") || NXB.equals("") || NgayNhap.equals("") || TheLoai.equals("") || soLuong.equals("")) {
                             Toast.makeText(Main4Activity_TheSuaXoa_Sach.this, "Bạn Không Được Để Trống", Toast.LENGTH_SHORT).show();
-
                         }else {
                             Pattern pattern = Pattern.compile(".*\\D.");
-                            Matcher matcher = pattern.matcher(tvDonGia.getEditText().getText().toString());
-                            if (matcher.matches()){
+                            Matcher matcher1 = pattern.matcher(tvDonGia.getEditText().getText().toString().trim());
+                            Matcher matcher2 = pattern.matcher(tvSL.getEditText().getText().toString().trim());
+
+                            if (matcher2.matches()){
+                                tvSL.setError("Bạn Phải Nhập Vào 1 Số");
+                            }else {
+                                tvSL.setError(null);
+                            }
+
+                            if (matcher1.matches()){
                                 tvDonGia.setError("Bạn Phải Nhập Vào 1 Số");
                             }else {
                                 tvDonGia.setError(null);
                             }
-//                            Sach sach = new Sach();
-//                            sach.setMaSach(maS);
-//                            sach.setTenSach(TenS);
-//                            sach.setGia(Double.valueOf(DonGia));
-//                            sach.
+
                         }
                     }
                 });
