@@ -15,7 +15,7 @@ public class Sach {
     public Sach() {
     }
 
-    public Sach(String maSach, String tenSach, int soLuong, String ngayNhap, double gia, String nhaXuatBan, String theLoai) {
+    public Sach(String maSach, String tenSach, int soLuong, String ngayNhap, double gia, String nhaXuatBan, String theLoai, String tacGia) {
         MaSach = maSach;
         TenSach = tenSach;
         SoLuong = soLuong;
@@ -23,8 +23,8 @@ public class Sach {
         Gia = gia;
         NhaXuatBan = nhaXuatBan;
         TheLoai = theLoai;
+        TacGia = tacGia;
     }
-
 
     public String getTacGia() {
         return TacGia;

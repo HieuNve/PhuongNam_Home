@@ -34,7 +34,7 @@ public class Main4Activity_TheSuaXoa_Sach extends AppCompatActivity implements A
     Control_Sach control_sach;
     TheLoai_DAO theLoai_dao;
     ListView listView;
-    List<String> Sachlist;
+    List<Sach> Sachlist;
     List<String> TLList;
     String TheLoai;
 
@@ -82,7 +82,7 @@ public class Main4Activity_TheSuaXoa_Sach extends AppCompatActivity implements A
                 TLList = new ArrayList<>();
                 TLList = theLoai_dao.getAlltheloai();
                 tvTL.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) Main4Activity_TheSuaXoa_Sach.this);
-                ArrayAdapter arrayAdapter = new ArrayAdapter(Main4Activity_TheSuaXoa_Sach.this,android.R.layout.simple_spinner_dropdown_item,TLList);
+                final ArrayAdapter arrayAdapter = new ArrayAdapter(Main4Activity_TheSuaXoa_Sach.this,android.R.layout.simple_spinner_dropdown_item,TLList);
                 tvTL.setAdapter(arrayAdapter);
 
                 tvNgayNhap.getEditText().setOnClickListener(new View.OnClickListener() {
@@ -150,8 +150,8 @@ public class Main4Activity_TheSuaXoa_Sach extends AppCompatActivity implements A
                             sach.setTacGia(Tacgia);
                             control_sach.insert(sach);
                             Sachlist = control_sach.getData();
-                            ArrayAdapter adapter = new ArrayAdapter(Main4Activity_TheSuaXoa_Sach.this, android.R.layout.simple_expandable_list_item_1, Sachlist);
-                            listView.setAdapter(adapter);
+                            adapter_ListView adapter_listView = new adapter_ListView(Main4Activity_TheSuaXoa_Sach.this,R.layout.custom_list_sach,Sachlist);
+                            listView.setAdapter(adapter_listView);
                         }
                     }
                 });
@@ -161,8 +161,8 @@ public class Main4Activity_TheSuaXoa_Sach extends AppCompatActivity implements A
 
         });
         Sachlist = control_sach.getData();
-        ArrayAdapter adapter = new ArrayAdapter(Main4Activity_TheSuaXoa_Sach.this, android.R.layout.simple_expandable_list_item_1, Sachlist);
-        listView.setAdapter(adapter);
+        adapter_ListView adapter_listView = new adapter_ListView(Main4Activity_TheSuaXoa_Sach.this,R.layout.custom_list_sach,Sachlist);
+        listView.setAdapter(adapter_listView);
 
     }
 

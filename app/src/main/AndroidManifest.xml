@@ -13,7 +13,6 @@
         <activity android:name=".Main3Activity_TimKiemHoaDon" />
         <activity android:name=".Main3Activity_SuaHoaDon" />
         <activity android:name=".Main3Activity_XoaHoaDon" />
-        <activity android:name=".Main3Activity_ThemHoaDon" />
         <activity android:name=".Main3Activity_DoiMatKhau" />
         <activity android:name=".Main3Activity_SuaThongTin" />
         <activity android:name=".Main3Activity_QLNguoiDung" />

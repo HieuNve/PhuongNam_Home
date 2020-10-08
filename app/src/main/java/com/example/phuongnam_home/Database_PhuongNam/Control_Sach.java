@@ -43,8 +43,8 @@ public class Control_Sach {
         }
     }
 
-    public List<String> getData() {
-        List<String> sachList = new ArrayList<>();
+    public List<Sach> getData() {
+        List<Sach> sachList = new ArrayList<>();
         Cursor cursor = db.query("table_sach", null, null, null, null, null, null);
         String ma, ten, theLoai, nxb, ngayNhap, tacGia;
         double gia;
@@ -58,8 +58,7 @@ public class Control_Sach {
             nxb = cursor.getString(cursor.getColumnIndex("nhaxuatban"));
             ngayNhap = cursor.getString(cursor.getColumnIndex("NgayNhap"));
             tacGia = cursor.getString(cursor.getColumnIndex("tacgia"));
-            sachList.add(ma + " : " + ten + " : " + tacGia +  " : " + soLuong + " : " + gia
-                    + " : " + theLoai + " : " + nxb + " : " + ngayNhap);
+            sachList.add(new Sach(ma,ten,soLuong,ngayNhap,gia,theLoai,nxb,tacGia));
         }
         cursor.close();
         return sachList;
