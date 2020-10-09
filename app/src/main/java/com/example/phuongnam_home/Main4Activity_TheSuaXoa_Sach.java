@@ -134,7 +134,7 @@ public class Main4Activity_TheSuaXoa_Sach extends AppCompatActivity implements A
                                 tvDonGia.setError(null);
                             }
 
-
+//them sach
                             Sach sach = new Sach();
                             sach.setMaSach(maS);
                             sach.setTenSach(TenS);
